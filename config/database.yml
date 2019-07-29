@@ -3,5 +3,5 @@ development:
   encoding: unicode
   database: agenda-telefonica
   pool: 2
-  username: your_username
-  password: your_password
+  username: postgres
+  password: postgresdb
