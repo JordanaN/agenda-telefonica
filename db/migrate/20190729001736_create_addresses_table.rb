@@ -7,6 +7,7 @@ class CreateAddressesTable < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :cep
       t.string :complement
+      t.integer :contact_id
 
       t.timestamps
     end

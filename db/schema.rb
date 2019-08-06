@@ -22,27 +22,28 @@ ActiveRecord::Schema.define(version: 2019_07_29_005228) do
     t.string "state"
     t.string "cep"
     t.string "complement"
+    t.integer "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "email"
     t.text "notes"
-    t.integer "phone_id"
-    t.integer "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "phones", force: :cascade do |t|
     t.string "title"
-    t.integer "string"
+    t.string "code", null: false
+    t.string "number", null: false
+    t.integer "contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "contacts", "addresses"
-  add_foreign_key "contacts", "phones"
+  add_foreign_key "addresses", "contacts"
+  add_foreign_key "phones", "contacts"
 end
